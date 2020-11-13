@@ -1,9 +1,10 @@
 Package: styleer
 Title: Some essential packages and original function for me  
-Version: 0.1.0
+Version: 0.2.0
 Authors@R: person("Ray", "Stylee", email = "ray.stylee@outlook.com", role = c("aut", "cre"))
 Description: A collection of my data processing routines.
 Depends: R (>= 3.4.0),
+	feather,
 	doParallel,
 	stringr,
 	ggplot2,

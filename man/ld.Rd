@@ -2,23 +2,23 @@
 % Please edit documentation in R/io.R
 \name{ld}
 \alias{ld}
-\title{A simplified load function using readRDS() or load().}
+\title{A simplified load function using readRDS(), load() or read_feather().}
 \usage{
-ld(filename, objname = NULL, path = "./data", force = F, rds = F)
+ld(filename, objname = NULL, ldtype = "Rdata", path = "./data", force = F)
 }
 \arguments{
 \item{filename}{expression or char. The file name to be loaded, e.g. ld(x) equals to load(file='dt.rds')}
 
-\item{objname}{expression or char. The object name in R. If NULL then equals to filename}
+\item{objname}{expression or char. The object name in R. If NULL then equals to filename.}
+
+\item{ldtype}{`Rdata`, `rds` or `feather`. The default is `Rdata`.}
 
 \item{path}{From which subfolder to read the data. Default to '../data'. If './', load from current directory.}
 
 \item{force}{Whether the object should be reloaded if it's already in the current environment.}
-
-\item{rds}{Whether the object should be load from '.rds' file. The default value is 'FALSE', which the object will be load from '.Rdata' file.}
 }
 \description{
-A simplified load function using readRDS() or load().
+A simplified load function using readRDS(), load() or read_feather().
 }
 \examples{
 ld(dt)
