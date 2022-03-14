@@ -168,7 +168,7 @@ fbread <- function(path = './data', pattern = NULL, ...) {
     data[,  file_content := lapply(file_id, function(x) fread(paste0(path, "/", x), ...))]
 
     # bind all the batches
-    flat.data <- data[, rbindlist(.SD[['file_content']], fill = T, idcol = "file_id")]
+    flat.data <- data[, rbindlist(.SD[['file_content']], fill = T), by = .(file_id)]
     flat.data
 
     # output time elapsed
